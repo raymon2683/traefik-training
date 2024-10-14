@@ -3,7 +3,7 @@ version: '3'
 services:
   traefik:
     # The latest official supported Traefik docker image
-    image: traefik:v2.3
+    image: docker.io/traefik:v3.2
     # Enables the Traefik Dashboard and tells Traefik to listen to docker
     # enable --log.level=INFO so we can see what Traefik is doing in the log files
     ports:
@@ -20,7 +20,7 @@ services:
 # Add the catapp service
   catapp:
      # A Random Cat GIF generator application
-     image: mikesir87/cats:1.0
+     image: docker.io/mikesir87/cats:1.0
      # We set a label to tell Traefik to assign a hostname to the new service
      labels:
       - "traefik.enable=true"

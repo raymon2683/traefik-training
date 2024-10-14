@@ -3,7 +3,7 @@ version: '3'
 services:
   traefik:
     # The latest official supported Traefik docker image
-    image: traefik:v2.3
+    image: docker.io/traefik:v3.2
     # Enables the Traefik Dashboard and tells Traefik to listen to docker
     # --providers tell Traefik to connect to the Docker provider
     # enable --log.level=INFO so we can see what Traefik is doing in the log files
@@ -23,7 +23,7 @@ services:
 # Add the whoami service
   whoami:
      # A container that exposes an API to show its IP address
-     image: containous/whoami
+     image: docker.io/traefik/whoami
      # We set a label to tell Traefik to assign a hostname to the new service
      labels:
        - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
